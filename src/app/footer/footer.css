@@ -1,0 +1,212 @@
+footer {
+  background-color: #072761;
+  padding: 60px 40px 0;
+  font-family: 'Bebas Neue', sans-serif;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 48px;
+  max-width: 960px;
+  margin: 0 auto;
+  padding-bottom: 48px;
+  border-bottom: 0.5px solid rgba(255, 255, 255, 0.15);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.logo-circle {
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  border-radius: 50%;
+  background: #a22634;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  color: white;
+  font-weight: bold;
+}
+
+.brand-name {
+  color: white;
+  font-size: 18px;
+  margin: 0;
+  letter-spacing: 0.05em;
+}
+
+.brand-sub {
+  color: #c4b89a;
+  font-size: 13px;
+  margin: 0;
+  font-family: sans-serif;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.descripcion {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 14px;
+  font-family: sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  margin: 0 0 24px;
+}
+
+.redes {
+  display: flex;
+  gap: 12px;
+}
+
+.red-icon {
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 16px;
+  text-decoration: none;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.red-icon:hover {
+  border-color: white;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.col-titulo {
+  color: #c4b89a;
+  font-size: 16px;
+  letter-spacing: 0.1em;
+  margin: 0 0 20px;
+}
+
+.info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.info-item i {
+  color: #c4b89a;
+  font-size: 16px;
+  margin-top: 2px;
+}
+
+.info-item p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 13px;
+  font-family: sans-serif;
+  font-weight: 400;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.horario-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.horario-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  font-family: sans-serif;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.hora {
+  color: white;
+}
+
+.cerrado {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.footer-bottom {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-bottom p {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 12px;
+  font-family: sans-serif;
+  font-weight: 400;
+  margin: 0;
+}
+
+/* ── TABLET (max 768px) ── */
+@media (max-width: 768px) {
+  footer {
+    padding: 40px 24px 0;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr; /* 2 columnas: brand arriba ocupa las 2 */
+    gap: 32px;
+  }
+
+  .col-brand {
+    grid-column: 1 / -1; /* ocupa todo el ancho */
+  }
+}
+
+/* ── MÓVIL (max 600px) ── */
+@media (max-width: 600px) {
+  footer {
+    padding: 32px 20px 0;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr; /* una sola columna */
+    gap: 28px;
+  }
+
+  .col-brand {
+    grid-column: auto;
+  }
+
+  .brand-name {
+    font-size: 15px;
+  }
+
+  .brand-sub {
+    font-size: 11px;
+  }
+
+  .redes {
+    flex-wrap: wrap; /* iconos sociales bajan si no caben */
+    gap: 10px;
+  }
+
+  .horario-row {
+    gap: 12px;
+  }
+
+  .footer-bottom {
+    text-align: center;
+    padding: 16px 0;
+  }
+}

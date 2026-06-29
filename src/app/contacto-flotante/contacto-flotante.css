@@ -1,0 +1,123 @@
+/* Botón flotante */
+.btn-flotante {
+  position:fixed;
+  bottom: 32px;
+  left: 20px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: #072761;
+  color: white;
+  border: none;
+  cursor: pointer;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-flotante:hover {
+  background-color: #a22634;
+  transform: scale(1.1);
+}
+
+/* Overlay */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+/* Card del modal */
+.modal-card {
+  background: white;
+  border-radius: 16px;
+  padding: 32px;
+  width: 100%;
+  max-width: 460px;
+  position: relative;
+}
+
+/* Header del modal */
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.modal-titulo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 28px;
+  color: #072761;
+  margin: 0;
+  letter-spacing: 0.05em;
+}
+
+.btn-cerrar {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #888;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.3s ease;
+}
+
+.btn-cerrar:hover {
+  color: #a22634;
+}
+
+/* Subtítulo */
+.modal-sub {
+  color: #888;
+  font-size: 14px;
+  font-family: sans-serif;
+  margin: 0 0 24px;
+}
+
+/* Campos */
+.campo-completo {
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+/* Botón enviar */
+.btn-enviar {
+  width: 100%;
+  background-color: #072761 !important;
+  color: white !important;
+  font-family: 'Bebas Neue', sans-serif !important;
+  font-size: 16px !important;
+  letter-spacing: 0.1em !important;
+  padding: 12px !important;
+  border-radius: 8px !important;
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: background-color 0.3s ease !important;
+}
+
+.btn-enviar:hover {
+  background-color: #a22634 !important;
+}
+
+/* Color de la línea de Material */
+::ng-deep .mat-mdc-form-field.mat-focused .mat-mdc-floating-label {
+  color: #072761 !important;
+}
+
+::ng-deep .mat-mdc-form-field.mat-focused .mdc-notched-outline__leading,
+::ng-deep .mat-mdc-form-field.mat-focused .mdc-notched-outline__notch,
+::ng-deep .mat-mdc-form-field.mat-focused .mdc-notched-outline__trailing {
+  border-color: #072761 !important;
+}

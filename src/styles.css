@@ -1,0 +1,43 @@
+/* styles.css */
+
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+* {
+
+  box-sizing: border-box;
+
+}
+
+html, body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f0e8;
+   overflow-x: hidden;
+   overflow-y: auto;   /* ocupa todo el ancho de la pantalla */
+}
+img {
+  max-width: 100%;
+}
+app-school-history,
+app-lenin,
+app-carrusel,
+app-plataformas,
+app-noticia {
+  display: block;
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 100%;
+   /* padding lateral igual en todos */
+  box-sizing: border-box;
+}
+
+/* responsive — cuando la pantalla es pequeña */
+@media (max-width: 768px) {
+  app-school-history,
+  app-lenin,
+  app-carrusel,
+  app-plataformas,
+  app-noticia {
+    padding: 0 1rem;    /* menos padding en móvil */
+  }
+}

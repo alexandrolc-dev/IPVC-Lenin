@@ -1,0 +1,24 @@
+<section class="noticias-seccion">
+ <div class="contenido">
+  <span class="noticias-label">Noticias</span>
+  <p class="noticias-subtitulo">
+    Lo más reciente de <span class="rojo" > nuestra comunidad </span>
+  </p>
+</div>
+  <!-- fade-in al hacer scroll -->
+  <div class="grid-noticias fade-in" #fadeEl>
+
+    @for (noticia of noticias; track noticia.id) {
+      <mat-card class="noticia-card">
+        <img mat-card-image [src]="noticia.img" [alt]="noticia.titulo"/>
+        <mat-card-content>
+          <span class="categoria">{{ noticia.categoria }}</span>
+          <h3>{{ noticia.titulo }}</h3>
+          <a [href]="noticia.url" target="_blank">Más información →</a>
+        </mat-card-content>
+      </mat-card>
+    }
+
+  </div>
+
+</section>

@@ -1,0 +1,59 @@
+<section class="carrusel-seccion">
+
+  <!-- etiqueta superior igual que las otras secciones -->
+   <div class="titulos">
+  <span class="carrusel-label">Galería</span>
+  <p class="carrusel-subtitulo"> <span class="rojo">
+    Imágenes que cuentan </span> nuestra historia
+  </p>
+</div>
+  <!-- fade-in al hacer scroll -->
+  <div class="fade-in" #fadeEl>
+
+    <div class="carrusel-wrapper">
+
+      <button class="carrusel-flecha izquierda" (click)="anterior()" aria-label="Imagen anterior">&#10094;</button>
+
+      <div class="carrusel">
+        <div class="carrusel-pista">
+          @for (imagen of imagenes; track imagen.id; let i = $index) {
+            <div class="carrusel-item" [ngClass]="obtenerPosicion(i)"
+              (click)="i === indiceActivo ? abrirImagen(imagen) : irA(i)">
+              <img [src]="imagen.img" [alt]="imagen.titulo" class="carrusel-imagen">
+            </div>
+          }
+        </div>
+
+        <!-- nombre de la imagen activa -->
+        <p class="carrusel-nombre">{{ imagenes[indiceActivo].titulo }}</p>
+
+        <div class="carrusel-puntos">
+          @for (imagen of imagenes; track imagen.id; let i = $index) {
+            <span class="punto" [class.activo]="i === indiceActivo" (click)="irA(i)"></span>
+          }
+        </div>
+      </div>
+
+      <button class="carrusel-flecha derecha" (click)="siguiente()" aria-label="Imagen siguiente">&#10095;</button>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- lightbox sin cambios -->
+@if (imagenAmpliada) {
+  <div class="lightbox-fondo" (click)="cerrarImagen()">
+    <button class="lightbox-cerrar" (click)="cerrarImagen(); $event.stopPropagation()" aria-label="Cerrar imagen">
+      &times;
+    </button>
+    <img
+      [src]="imagenAmpliada!.img"
+      [alt]="imagenAmpliada!.titulo"
+      class="lightbox-imagen"
+      [class.zoom]="zoomActivo"
+      (click)="$event.stopPropagation()"
+      (dblclick)="alternarZoom()">
+  </div>
+}

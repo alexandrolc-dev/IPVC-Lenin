@@ -1,0 +1,240 @@
+/* ── SECCIÓN ── */
+.lenin-valores {
+  background: #f5f0e8;
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 0;
+}
+
+.contenido {
+  width: 100%;
+}
+
+.info-link {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: block;
+}
+
+.info-link:hover {
+  color: rgb(255, 0, 0);
+  text-decoration: none;
+}
+
+/* ── ETIQUETA AZUL CON SUBRAYADO ── */
+.plataformas-label {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 60px;
+  color: rgb(7, 39, 97);
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  text-decoration-thickness: 3px;
+  display: block;
+  margin-top: 0.7rem;
+  padding-bottom:0.7rem ;
+}
+
+/* ── SUBTÍTULO ── */
+.plataformas-subtitulo {
+  margin-bottom: 1.5rem;
+}
+
+.subtitulo-negro {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 25px;
+  margin-top: 10px;
+  color: #1a1a1a;
+}
+
+.subtitulo-dorado {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 25px;
+  color: #8b6914;
+}
+
+/* ── ETIQUETA DE GRUPO ── */
+.grupo-label {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 25px;
+  letter-spacing: 0.1em;
+  color: #8b6914;
+  text-transform: uppercase;
+  text-align: center;
+  margin: 2rem 0 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+.grupo-label::before,
+.grupo-label::after {
+  content: '';
+  flex: 1;
+  height: 2px;
+  background: #c4b89a;
+}
+
+/* ── CONTENEDOR CARDS ── */
+.contain_description {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;        /* ← las cards bajan si no caben */
+  align-items: flex-start;
+  justify-content: center;
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* ── CARD ── */
+.description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 280px;
+  padding: 1.5rem 1rem;
+  border-top: 4px solid #8b6914;
+  background: white;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+  justify-content: flex-start;
+  border-radius: 12px;
+  transition: transform 0.4s ease, box-shadow 0.2s ease;
+  cursor: default;
+  margin-top: 10px;
+}
+
+.description:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 28px rgba(7,39,97,0.15);
+}
+
+/* ── NOMBRE ── */
+.name {
+  font-family: system-ui, sans-serif;
+  font-style: italic;
+  font-weight: 100;
+  font-size: 50px;
+}
+
+/* ── ICONO ── */
+.icono-sitio {
+  height: 80px;
+  width: auto;
+  object-fit: contain;
+  margin: 10px 0;
+}
+
+/* ── DESCRIPCIÓN ── */
+.info {
+  font-family: dm-sans, sans-serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 16px;
+  cursor: default;
+  color: rgb(99, 99, 99);
+  margin-top: 10px;
+}
+
+/* ── FADE IN ── */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ════════════════════════════
+   RESPONSIVE
+════════════════════════════ */
+
+/* ── TABLET (max 768px) ── */
+@media (max-width: 768px) {
+  .lenin-valores {
+    padding: 1.5rem;
+  }
+
+  .plataformas-label {
+    font-size: 48px;
+  }
+
+  .subtitulo-negro,
+  .subtitulo-dorado {
+    font-size: 20px;
+  }
+
+  .contain_description {
+    gap: 1.2rem;
+  }
+
+  .description {
+    width: 220px;
+  }
+
+  .name {
+    font-size: 38px;
+  }
+}
+
+/* ── MÓVIL (max 600px) ── */
+@media (max-width: 600px) {
+  .lenin-valores {
+    padding: 1.5rem 1rem;
+  }
+
+  .plataformas-label {
+    font-size: clamp(28px, 9vw, 48px);
+  }
+
+  .subtitulo-negro,
+  .subtitulo-dorado {
+    font-size: clamp(14px, 4vw, 20px);
+  }
+
+  .grupo-label {
+    font-size: 18px;
+    margin: 1.5rem 1rem 1rem;
+  }
+
+  .contain_description {
+    gap: 1rem;
+    padding: 0 0.5rem;
+  }
+
+  /* 2 cards por fila en móvil */
+  .description {
+    width: calc(50% - 0.5rem);
+    padding: 1rem 0.75rem;
+  }
+
+  .name {
+    font-size: 32px;
+  }
+
+  .icono-sitio {
+    height: 60px;
+  }
+
+  .info {
+    font-size: 13px;
+  }
+}
+
+/* ── MUY PEQUEÑO (max 375px) ── */
+@media (max-width: 375px) {
+  /* 1 card por fila en pantallas muy chicas */
+  .description {
+    width: 100%;
+  }
+}

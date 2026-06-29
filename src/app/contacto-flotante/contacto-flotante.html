@@ -1,0 +1,63 @@
+<!-- Botón flotante -->
+<button class="btn-flotante" (click)="toggleModal()">
+  <mat-icon>mail</mat-icon>
+</button>
+
+<!-- Modal -->
+@if (abierto) {
+  <div class="modal-overlay" (click)="toggleModal()">
+    <div class="modal-card" [@modalAnim] (click)="$event.stopPropagation()">
+
+      <div class="modal-header">
+        <h2 class="modal-titulo">Contáctanos</h2>
+        <button class="btn-cerrar" (click)="toggleModal()">
+          <mat-icon>close</mat-icon>
+        </button>
+      </div>
+
+      <p class="modal-sub">Contáctanos y te responderemos lo antes posible.</p>
+
+      <form [formGroup]="formulario" (ngSubmit)="enviar()">
+
+        <mat-form-field appearance="outline" floatLabel="always" class="campo-completo">
+          <mat-label>Nombre</mat-label>
+          <input matInput formControlName="nombre" placeholder="Tu nombre"/>
+          @if (nombre?.hasError('required') && nombre?.touched) {
+            <mat-error>El nombre es obligatorio</mat-error>
+          }
+          @if (nombre?.hasError('minlength') && nombre?.touched) {
+            <mat-error>Mínimo 3 caracteres</mat-error>
+          }
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" floatLabel="always" class="campo-completo">
+          <mat-label>Email</mat-label>
+          <input matInput formControlName="email" placeholder="tu@correo.com"/>
+          @if (email?.hasError('required') && email?.touched) {
+            <mat-error>El email es obligatorio</mat-error>
+          }
+          @if (email?.hasError('email') && email?.touched) {
+            <mat-error>Formato de email inválido</mat-error>
+          }
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" floatLabel="always" class="campo-completo">
+          <mat-label>Mensaje</mat-label>
+          <textarea matInput formControlName="mensaje" rows="4" placeholder="Escribe tu mensaje..."></textarea>
+          @if (mensaje?.hasError('required') && mensaje?.touched) {
+            <mat-error>El mensaje es obligatorio</mat-error>
+          }
+          @if (mensaje?.hasError('minlength') && mensaje?.touched) {
+            <mat-error>Mínimo 10 caracteres</mat-error>
+          }
+        </mat-form-field>
+
+        <button mat-raised-button type="submit" class="btn-enviar">
+          Enviar mensaje
+          <mat-icon>send</mat-icon>
+        </button>
+
+      </form>
+    </div>
+  </div>
+}

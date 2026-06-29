@@ -1,0 +1,144 @@
+header {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  height: 108px;
+  padding: 20px;
+  box-shadow: 0px 5px 9px;
+  background-color: white;
+}
+
+.titulo {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.icono {
+  width: 70px;
+  height: 70px;
+}
+
+.title {
+  font-size: 30px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-weight: 500 !important;
+}
+
+.redes {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.redes a img {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.insta {
+  width: 45px !important;
+  height: 45px !important;
+}
+
+.redes a:hover img {
+  transform: scale(1.2);
+  opacity: 0.8;
+}
+
+.x {
+  border-radius: 50px;
+}
+
+.youtube {
+  border-radius: 900px;
+  height: 65px !important;
+}
+
+/* ════════════════════════════
+   RESPONSIVE
+════════════════════════════ */
+
+/* ── TABLET (max 768px) ── */
+@media (max-width: 768px) {
+  header {
+    height: auto;
+    padding: 12px 16px;
+  }
+
+  .icono {
+    width: 50px;
+    height: 50px;
+  }
+
+  .title {
+    font-size: 22px;
+  }
+
+  .redes a img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .insta {
+    width: 34px !important;
+    height: 34px !important;
+  }
+
+  .youtube {
+    height: 46px !important;
+  }
+}
+
+/* ── MÓVIL (max 600px) ── */
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;  /* apila titulo y redes */
+    align-items: flex-start;
+    height: auto;
+    padding: 10px 14px;
+    gap: 8px;
+  }
+
+  .redes {
+    margin-left: 0;          /* quita el auto para que se alinee a la izquierda */
+    gap: 8px;
+  }
+
+  .icono {
+    width: 40px;
+    height: 40px;
+  }
+
+  .title {
+    font-size: 18px;
+  }
+
+  .redes a img {
+    width: 28px;
+    height: 28px;
+  }
+
+  .insta {
+    width: 32px !important;
+    height: 32px !important;
+  }
+
+  .youtube {
+    height: 40px !important;
+  }
+}
+
+/* ── MUY PEQUEÑO (max 375px) ── */
+@media (max-width: 375px) {
+  .title {
+    font-size: 15px;
+  }
+
+  .redes a img {
+    width: 24px;
+    height: 24px;
+  }
+}

@@ -1,0 +1,51 @@
+<section class="lenin-valores">
+
+  <div class="contenido">
+  <span class="plataformas-label">Recursos</span>
+  <p class="plataformas-subtitulo">
+    <span class="subtitulo-negro">Plataformas y medios para </span>
+    <span class="subtitulo-dorado">nuestra comunidad</span>
+  </p>
+  </div>
+  <!-- GRUPO 1: Plataformas educativas -->
+  <p class="grupo-label">Plataformas educativas</p>
+
+  <div class="contain_description fade-in" #fadeEl>
+    @for (sitio of sitios; track sitio.id) {
+      <mat-card class="description">
+        <mat-card-title class="name">{{ sitio.name }}</mat-card-title>
+        <img [src]="sitio.img" class="icono-sitio">
+        <mat-card-content class="info">
+        <a
+        [href]="sitio.url"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="info-link">{{ sitio.description }}</a>
+        </mat-card-content>
+
+      </mat-card>
+      }
+  </div>
+
+  <!-- GRUPO 2: Prensa y organismos -->
+  <p class="grupo-label">Prensa y organismos</p>
+
+  <div class="contain_description fade-in" #fadeEl>
+    @for (sitio of prensa; track sitio.id) {
+      <mat-card class="description">
+        <mat-card-title class="name">{{ sitio.name }}</mat-card-title>
+        <img [src]="sitio.img" class="icono-sitio">
+        <mat-card-content class="info">
+          <a
+           [href]="sitio.url"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="info-link">
+           {{sitio.description}}
+          </a>
+        </mat-card-content>
+      </mat-card>
+    }
+  </div>
+
+</section>

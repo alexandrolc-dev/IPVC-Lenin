@@ -1,0 +1,40 @@
+<section class="slider">
+  <div class="slider-pista">
+    @for (slide of slides; track slide.imagen; let i = $index) {
+      <div
+        class="slide"
+        [class.activo]="i === indiceActual"
+        [class.saliendo-izquierda]="i !== indiceActual && direccion === 'izquierda'"
+        [class.saliendo-derecha]="i !== indiceActual && direccion === 'derecha'"
+        [style.background-image]="'url(' + slide.imagen + ')'">
+
+        <div class="overlay"></div>
+        <div class="contenido">
+        <h2 class="titulo-slide">{{ slide.titulo }}</h2>
+         <div class="botones-hero">
+            <a href="#historia" class="btn-hero">Historia</a>
+            <a href="#lenin" class="btn-hero">Lenin</a>
+            <a href="#galeria" class="btn-hero">Galería</a>
+            <a href="#plataformas" class="btn-hero">Plataformas</a>
+            <a href="#noticias" class="btn-hero">Noticias</a>
+       </div>
+       </div>
+       </div>
+    }
+      <div class="flechas-container">
+  <button class="flecha flecha-izq" (click)="anterior()">&#8249;</button>
+  <button class="flecha flecha-der" (click)="siguiente()">&#8250;</button>
+ </div>
+  <div class="puntos">
+    @for (slide of slides; track slide.imagen; let i = $index) {
+      <button
+        class="punto"
+        [class.punto-activo]="i === indiceActual"
+        (click)="irA(i)">
+      </button>
+    }
+  </div>
+
+  </div>
+
+</section>
