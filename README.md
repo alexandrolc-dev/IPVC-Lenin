@@ -1,59 +1,108 @@
-# Escuela
+# 🏫 IPVCE Vladimir Ilich Lenin — Sitio Web Oficial
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.10.
+Sitio web institucional del **Instituto Preuniversitario Vocacional de Ciencias Exactas Vladimir Ilich Lenin**, desarrollado en Angular como proyecto académico.
 
-## Development server
+> 🎯 **Objetivo:** Rediseñar y mejorar la página web institucional existente, originalmente construida en WordPress, logrando mayor rendimiento, control total del código, diseño completamente personalizado y una experiencia de usuario más moderna y fluida.
 
-To start a local development server, run:
+Este proyecto nació como una propuesta de modernización real para la institución. En lugar de depender de plantillas y plugins de WordPress, se construyó desde cero con Angular, lo que permitió un control total sobre el diseño, las animaciones, el rendimiento y la arquitectura de componentes. Cada sección fue diseñada con identidad visual propia — tipografía, paleta de colores y disposición — para reflejar la historia y el prestigio del instituto.
+
+---
+
+## 📸 Vista previa
+
+| Hero | Historia | Galería |
+|------|----------|---------|
+| ![Hero](screenshots/hero.png) | ![Historia](screenshots/historia.png) | ![Galeria](screenshots/galeria.png) |
+
+---
+
+## ✨ Características
+
+- **Hero slider** con navegación y llamadas a la acción
+- **Historia de la escuela** con texto e imágenes históricas
+- **Sección Lenin** — biografía del fundador del nombre del instituto
+- **Galería** con carrusel personalizado (efecto de profundidad, lightbox con zoom y puntos de navegación)
+- **Plataformas educativas** — recursos y medios para la comunidad escolar
+- **Noticias** — sección con tarjetas de artículos recientes
+- **Formulario de contacto** reactivo con validación completa (Angular Reactive Forms)
+- **Botón flotante de contacto** siempre visible en pantalla
+- **Animaciones fade-in** activadas al hacer scroll con IntersectionObserver
+- **Footer** con información de contacto, horario y redes sociales
+- **Diseño responsive** — adaptado para móvil, tablet y escritorio
+
+---
+
+## 🛠️ Tecnologías
+
+- [Angular 17+](https://angular.io/)
+- [Angular Material](https://material.angular.io/) — componentes UI
+- TypeScript
+- SCSS / CSS personalizado
+- Fuentes: [Inter](https://fonts.google.com/specimen/Inter) · [Bebas Neue](https://fonts.google.com/specimen/Bebas+Neue)
+
+---
+
+## 🚀 Cómo ejecutarlo localmente
+
+### Requisitos previos
+
+- Node.js 18+
+- Angular CLI
 
 ```bash
+npm install -g @angular/cli
+```
+
+### Instalación
+
+```bash
+# Clonar el repositorio
+git clone https://github.com/alexandrolc-dev/IPVC-Lenin.git
+cd ipvce-lenin
+
+# Instalar dependencias
+npm install
+
+# Iniciar servidor de desarrollo
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Abre [http://localhost:4200](http://localhost:4200) en tu navegador.
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
+### Compilar para producción
 
 ```bash
 ng build
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Los archivos de salida quedan en `/dist`.
 
-## Running unit tests
+---
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+## 📁 Estructura del proyecto
 
-```bash
-ng test
+```
+src/
+└── app/
+    ├── carrusel/          # Galería con carrusel 3D y lightbox
+    ├── contacto-flotante/ # Botón y modal de contacto
+    ├── footer/            # Pie de página
+    ├── hero-slider/       # Slider principal
+    ├── lenin/             # Sección biográfica
+    ├── noticia/           # Tarjetas de noticias
+    ├── plataformas/       # Recursos educativos
+    └── school-history/    # Historia del instituto
 ```
 
-## Running end-to-end tests
+---
 
-For end-to-end (e2e) testing, run:
+## 👨‍💻 Autor
 
-```bash
-ng e2e
-```
+**Manuel Alexandro Legra Crespo**  
+[GitHub](https://github.com/alexandrolc-dev) · [LinkedIn](https://www.linkedin.com/in/manuel-alexandro-legra-crespo-0769bb410/)
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+---
 
-## Additional Resources
+## 📄 Licencia
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Este proyecto es de uso educativo y sin fines comerciales.
